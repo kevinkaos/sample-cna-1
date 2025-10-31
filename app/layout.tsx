@@ -4,7 +4,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { NextJSApolloProvider as ApolloProvider } from "@apollo/sdk";
-import Link from "next/link";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -31,12 +30,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ApolloProvider moduleName="sample-cna-1" version="1.0.0" debug>
-          <nav className="p-4 flex gap-6 border-b bg-[#42515c] text-white">
-            <Link href="/">Home</Link>
-            <Link href="/layer1/route-1">路徑 2</Link>
-            <Link href="/layer1/route-2">路徑 3</Link>
-            <Link href="/layer1/route-3">路徑 3</Link>
-          </nav>
           {children}
         </ApolloProvider>
       </body>
